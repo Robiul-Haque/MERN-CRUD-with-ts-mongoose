@@ -31,7 +31,6 @@ const signInIntoDB = async (payload: TLoginUser) => {
 
 // Service to handle forget password with OTP.
 const forgetPasswordWithOtp = async (email: string) => {
-    console.log(email)
     const user = await User.findOne({ email });
     if (!user) {
         throw new AppError(httpStatus.NOT_FOUND, "Account not found");
